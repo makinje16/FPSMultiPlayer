@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
 [RequireComponent(typeof(PlayerMovement))]
 public class PlayerController : MonoBehaviour
@@ -14,6 +15,8 @@ public class PlayerController : MonoBehaviour
 	private void Start()
 	{
 		_movement = GetComponent<PlayerMovement>();
+		string ID = "Player " + GetComponent<NetworkIdentity>().netId;
+		gameObject.name = ID;
 	}
 
 	private void Update()

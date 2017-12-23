@@ -1,6 +1,8 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.Networking;
 
+[RequireComponent(typeof(PlayerManager))]
 public class PlayerSetup : NetworkBehaviour
 {
 	[SerializeField] private Behaviour[] componentsToDisable;
@@ -27,11 +29,20 @@ public class PlayerSetup : NetworkBehaviour
 		}
 	}
 
+	public override void OnStartClient()
+	{
+		base.OnStartClient();
+		string _netID = GetComponent<NetworkIdentity>().netId.ToString();
+		PlayerManager manager = GetComponent<PlayerManager>();
+		GameHandler.registerPlayer(_netID, manager);
+	}
+
 	private void OnDisable()
 	{
 		if (sceneCamera != null)
 		{
 			sceneCamera.gameObject.SetActive(true);
 		}
+		GameHandler.unregisterPlayer(transform.name);
 	}
 }

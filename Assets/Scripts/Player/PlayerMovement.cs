@@ -7,7 +7,8 @@ public class PlayerMovement : MonoBehaviour
 {
 
 	[SerializeField] private Camera cam;
-	
+	[SerializeField] private float thrusterForce = 1000f;
+
 	private Vector3 velocity = Vector3.zero;
 	private Vector3 _rotation = Vector3.zero;
 	private Vector3 _cameraRotation = Vector3.zero;
@@ -28,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
 	{
 		PerformMovement();
 		PerformRotation();
+		checkThruster();
 	}
 
 	void PerformMovement()
@@ -56,6 +58,14 @@ public class PlayerMovement : MonoBehaviour
 	public void RotateCamera(Vector3 cameraRotation)
 	{
 		_cameraRotation = cameraRotation;
+	}
+
+	private void checkThruster()
+	{
+		if (Input.GetKeyDown(KeyCode.Space))
+		{
+			_rigidbody.AddForce(new Vector3(0, thrusterForce, 0));
+		}
 	}
 	
 	
