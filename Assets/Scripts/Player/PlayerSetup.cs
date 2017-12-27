@@ -27,6 +27,8 @@ public class PlayerSetup : NetworkBehaviour
 			}
 			Camera.main.gameObject.SetActive(false);
 		}
+
+		GetComponent<PlayerManager>().Setup();
 	}
 
 	public override void OnStartClient()
@@ -35,6 +37,7 @@ public class PlayerSetup : NetworkBehaviour
 		string _netID = GetComponent<NetworkIdentity>().netId.ToString();
 		PlayerManager manager = GetComponent<PlayerManager>();
 		GameHandler.registerPlayer(_netID, manager);
+		GetComponent<PlayerManager>().Setup();
 	}
 
 	private void OnDisable()

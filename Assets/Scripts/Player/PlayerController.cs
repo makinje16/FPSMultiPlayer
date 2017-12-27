@@ -2,19 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
-
+[RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(PlayerMovement))]
 public class PlayerController : MonoBehaviour
 {
 
 	[SerializeField] private float speed = 5f;
 	[SerializeField] private float lookSensitvity = 3f;
-	
+
+	private Animator _animator;
 	private PlayerMovement _movement;
 
 	private void Start()
 	{
 		_movement = GetComponent<PlayerMovement>();
+		_animator = GetComponent<Animator>();
 		string ID = "Player " + GetComponent<NetworkIdentity>().netId;
 		gameObject.name = ID;
 	}
@@ -23,15 +25,18 @@ public class PlayerController : MonoBehaviour
 	{
 		//calculate movement velocity as 3d Vector
 
-		float xMovement = Input.GetAxisRaw("Horizontal");
-		float zMovement = Input.GetAxisRaw("Vertical");
+		float xMovement = Input.GetAxis("Horizontal");
+		float zMovement = Input.GetAxis("Vertical");
 
 		Vector3 moveHorizontal = transform.right * xMovement;
 		Vector3 moveVertical = transform.forward * zMovement;
 
-		Vector3 velocity = (moveHorizontal + moveVertical).normalized * speed;
+		Vector3 velocity = (moveHorizontal + moveVertical) * speed;
 
 		_movement.Move(velocity);
+		
+		//Animate our movement
+		_animator.SetFloat("ForwardVelocity", zMovement);
 		
 		//calculate rotation as a 3d vector for turning
 

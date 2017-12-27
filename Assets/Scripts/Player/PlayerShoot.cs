@@ -38,7 +38,7 @@ public class PlayerShoot : NetworkBehaviour {
 	[Command]
 	public void CmdPlayerShot(string _playerID, float damage)
 	{
-		Debug.Log(_playerID + " has been shot");
+		Debug.Log(_playerID + " has been shot and is taking " + damage + " damage.");
 		var playerHit = GameHandler.getPlayer(_playerID);
 		playerHit.RpcDealDamage(weapon.damage);
 	}
