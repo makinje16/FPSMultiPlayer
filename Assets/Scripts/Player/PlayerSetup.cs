@@ -6,8 +6,10 @@ using UnityEngine.Networking;
 public class PlayerSetup : NetworkBehaviour
 {
 	[SerializeField] private Behaviour[] componentsToDisable;
-
+	[SerializeField] private GameObject playerUIPrefab;
+		
 	private Camera sceneCamera;
+	private GameObject playerUIInstance;
 	
 	private void Start()
 	{
@@ -38,6 +40,7 @@ public class PlayerSetup : NetworkBehaviour
 		PlayerManager manager = GetComponent<PlayerManager>();
 		GameHandler.registerPlayer(_netID, manager);
 		GetComponent<PlayerManager>().Setup();
+		Instantiate(playerUIPrefab);
 	}
 
 	private void OnDisable()

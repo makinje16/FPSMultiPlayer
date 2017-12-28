@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 199725099200872108}
   - component: {fileID: 198819793124044738}
   - component: {fileID: 135255410733852900}
-  - component: {fileID: 114306892572881564}
+  - component: {fileID: 114996172838153980}
   m_Layer: 0
   m_Name: Afterburner
   m_TagString: Untagged
@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 4116842942260358}
   - component: {fileID: 33750958868148416}
   - component: {fileID: 23930675559603856}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armour
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 199942372834992382}
   - component: {fileID: 198377580101094294}
   - component: {fileID: 135951812667644082}
-  - component: {fileID: 114651753813461058}
+  - component: {fileID: 114609579522791658}
   m_Layer: 0
   m_Name: Afterburner (1)
   m_TagString: Untagged
@@ -386,7 +386,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1144308788055494}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.186971, y: 1.95, z: 2.0998902}
+  m_LocalPosition: {x: -1.9106095, y: 1.552, z: -5.002007}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4826310986661872}
@@ -418,7 +418,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 4294967039
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -721,21 +721,6 @@ MonoBehaviour:
   m_MovementThreshold: 0.001
   m_InterpolateRotation: 0.5
   m_InterpolateMovement: 0.5
---- !u!114 &114306892572881564
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1069371676730600}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d44a238286f6904198ab78e914c229d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  effectAngle: 20
-  effectWidth: 2
-  effectDistance: 32
-  force: 140
 --- !u!114 &114455600965328346
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -753,6 +738,8 @@ MonoBehaviour:
   - {fileID: 81735896200968322}
   - {fileID: 20644193583809112}
   - {fileID: 95215565688483958}
+  playerUIPrefab: {fileID: 1704992039043082, guid: 14c525ab6ff2ad14cbb1c07dcc9cdbf8,
+    type: 2}
 --- !u!114 &114496552355755226
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -807,6 +794,21 @@ MonoBehaviour:
   m_SnapThreshold: 5
   m_InterpolateRotation: 10
   m_InterpolateMovement: 1
+--- !u!114 &114609579522791658
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1304482437038492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d44a238286f6904198ab78e914c229d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectAngle: 15
+  effectWidth: 1
+  effectDistance: 10
+  force: 0
 --- !u!114 &114611602867419292
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -852,21 +854,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   lookSensitvity: 3
---- !u!114 &114651753813461058
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1304482437038492}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d44a238286f6904198ab78e914c229d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  effectAngle: 20
-  effectWidth: 2
-  effectDistance: 32
-  force: 140
 --- !u!114 &114749949416099450
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -880,6 +867,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 20644193583809112}
   thrusterForce: 1000
+--- !u!114 &114996172838153980
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1069371676730600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d44a238286f6904198ab78e914c229d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectAngle: 15
+  effectWidth: 1
+  effectDistance: 10
+  force: 0
 --- !u!124 &124730608573515704
 Behaviour:
   m_ObjectHideFlags: 1
@@ -909,8 +911,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 16
-  m_Center: {x: 0, y: 0, z: 16}
+  m_Radius: 5
+  m_Center: {x: 0, y: 0, z: 5}
 --- !u!135 &135951812667644082
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -921,8 +923,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 16
-  m_Center: {x: 0, y: 0, z: 16}
+  m_Radius: 5
+  m_Center: {x: 0, y: 0, z: 5}
 --- !u!153 &153951491461622230
 ConfigurableJoint:
   m_ObjectHideFlags: 1
@@ -933,7 +935,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -10.186971, y: 1.95, z: 2.0998902}
+  m_ConnectedAnchor: {x: -1.9106095, y: 1.552, z: -5.002007}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
   m_XMotion: 2
@@ -1076,7 +1078,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: 41280639
+  randomSeed: -984958310
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -4296,7 +4298,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: 1471086081
+  randomSeed: 516920436
   InitialModule:
     serializedVersion: 3
     enabled: 1

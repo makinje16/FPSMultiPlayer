@@ -59,6 +59,9 @@
     <Compile Include="Assets\Scripts\Player\PlayerSetup.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerShoot.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerWeapon.cs" />
+    <Compile Include="Assets\SMC Pack 1\Demo\Files\V_SMC_Camera.cs" />
+    <Compile Include="Assets\SMC Pack 1\Demo\Files\V_SMC_Handler.cs" />
+    <Compile Include="Assets\SMC Pack 1\Demo\Files\V_Text.cs" />
     <None Include="Assets\Standard Assets\Prototyping\Shaders\WorldCoordDiffuse.shader" />
     <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAlpha.shader" />
     <None Include="Assets\Standard Assets\ParticleSystems\ParticleSystemsGuidelines.txt" />
